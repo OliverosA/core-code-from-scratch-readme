@@ -351,15 +351,13 @@ function shortcut (string) {
   for(let i = 0; i < string.length; i++){
     found = false;
     for(let j = 0; j < vowel.length; j++){
-      if(string[i] === vowel[j]){
-        console.log(string[i]); 
+      if(string[i] === vowel[j]){t 
         found = true;
         break;
       } 
     }
     if(found === true) continue;
     newStr += string[i];
-    console.log('el valor nuevo es; ' + newStr);
   }
   return newStr;
 }
