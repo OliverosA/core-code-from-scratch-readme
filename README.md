@@ -761,3 +761,100 @@ function array_diff(a, b) {
     return a.filter((value) => !b.includes(value));
 }
 ```
+# Week 6 challenges
+
+## Monday
+
+1.`Square(n) Sum`
+```Typescript
+export function squareSum(numbers: number[]): number {
+    return numbers.reduce(
+        (prev: number, current: number) => prev + Math.pow(current, 2), 0);
+}
+```
+
+2.`Growth Of A population`
+```Typescript
+export class G964 {
+
+    public static nbYear = (p0, percent, aug, p) => {
+        if (aug === null) aug = 0;
+        percent = percent / 100;
+        let totalYears = 0;
+        while (p0 < p) {
+            p0 = parseInt(p0 + p0 * percent + aug);
+            totalYears++;
+        }
+        return totalYears;
+    }
+}
+```
+3.`Mubmling`
+```Typescript
+export function accum(s: string): string {
+    return s
+        .toLowerCase()
+        .split('')
+        .map((value: string, index: number) => `${value.toUpperCase()}${value.repeat(index)}`)
+        .join('-');
+}
+```
+4.`A Wolf In Sheep's Clothing`
+```Typescript
+export function warnTheSheep(queue: string[]): string {
+    let wolfPosition = queue.indexOf('wolf');
+    if (wolfPosition === queue.length - 1) return 'Pls go away and stop eating my sheep';
+    let sheepPosition = queue.reverse().indexOf('wolf');
+    return `Oi! Sheep number ${sheepPosition}! You are about to be eaten by a wolf!`;
+}
+```
+
+## Tuesday
+
+1.`A Rule Of Divisibility By 13`
+```Typescript
+export function thirt(n: number): number {
+    const remainders = [1, 10, 9, 12, 3, 4];
+    let reversedNumber: string[] = n.toString().split('').reverse();
+    let index = 0;
+    let result = reversedNumber.reduce((total: number, digit: string) => {
+        if (index > 5) index = 0;
+        return total + Number(digit) * remainders[index++];
+    }, 0);
+    if (result === n) return result;
+    return thirt(result);
+}
+```
+2.`Playing With Digits`
+```Typescript
+export class G964 {
+    public static digPow = (n: number, p: number) => {
+        const sum = n
+            .toString()
+            .split('')
+            .map(Number)
+            .reduce((prev: number, curr: number) => prev + Math.pow(curr, p++), 0);
+        if (sum % n === 0) return sum / n;
+        return -1;
+    };
+}
+```
+3.`Valid Braces`
+```Typescript
+export function validBraces(braces: string): boolean {
+  const validate_braces = new Map([
+    ['(', ')'],
+    ['{', '}'],
+    ['[', ']'],
+  ]);
+  let result: string[] = [];
+  for(let i = 0; i < braces.length; i++){
+    if(validate_braces.has(braces[i])){
+      result.push(braces[i]); 
+      continue; //skipping next validation
+    } 
+    if(braces[i] !== validate_braces.get(result.pop() || '')) return false;
+  }
+  return result.length === 0;
+}
+```
