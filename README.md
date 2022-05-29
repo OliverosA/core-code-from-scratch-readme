@@ -587,7 +587,7 @@ var encryptThis = function(text) {
 }
 ```
 
-# Week 3 challenges
+# Week 4 challenges
 
 ## Wedndesday
 
@@ -624,5 +624,140 @@ function validate(password) {
         /[a-z]+/.test(password) &&
         /[0-9]+/.test(password)
     );
+}
+```
+
+# Week 5 challenges
+
+## Monday
+
+1.`Find The Missing Letter`
+```Javascript
+function findMissingLetter(array) {
+    const missing = array
+        .map((letter) => letter.charCodeAt())
+        .find((code, i, charCodeArray) => {
+            if (i === 0) return false;
+            return code - 1 != charCodeArray[i - 1];
+        });
+    return String.fromCharCode(missing - 1);
+}
+```
+
+2.`Reverse Or Rotate?`
+```Javascript
+function revrot(str, sz) {
+    if (sz <= 0 || str === '' || sz > str.length) return '';
+    //str.push(str.shift());
+    let reg = new RegExp(`\\d{${sz}}`, 'g');
+    let chunks = str.match(reg); //pedazos en base a sz
+    let sum = 0;
+    let chunkArray = [];
+    let result = chunks.map((chunk) => {
+        console.log(chunk);
+        sum = chunk
+            .split('')
+            .map((digit) => Math.pow(+digit, 3))  // saca las potencias de cada pedazo
+            .reduce((prev, curr) => prev + curr, 0); // suma las potencias de cada pedazo
+        chunkArray = chunk.split(''); // se parte el arreglo en pedazos otra ves
+        if (sum % 2 === 0) return chunkArray.reverse().join(''); // realizando una reversa
+        return chunkArray.push(chunkArray.shift()), chunkArray.join(''); //creando nuevamente un string
+    });
+    return result.join(''); //regresando el array original a un string
+}
+```
+
+## Tuesday
+
+1.`TypeScript Object Type`
+```TypeScript
+export interface User {
+    name: string;
+    age: number;
+    occupation: string;
+}
+
+export const users: User[] = [
+    {
+        name: 'Max Mustermann',
+        age: 25,
+        occupation: 'Chimney sweep'
+    },
+    {
+        name: 'Kate Müller',
+        age: 23,
+        occupation: 'Astronaut'
+    }
+];
+
+export function logPerson(user: User) {
+    console.log(` - ${user.name}, ${user.age}`);
+}
+
+console.log('Users:');
+users.forEach(logPerson);
+```
+
+2.`TypeScript Unions`
+```TypeScript
+interface User {
+    name: string;
+    age: number;
+    occupation: string;
+}
+
+interface Admin {
+    name: string;
+    age: number;
+    role: string;
+}
+
+export type Person = User | Admin;
+
+export const persons: Person[] /* <- Person[] */ = [
+    {
+        name: 'Max Mustermann',
+        age: 25,
+        occupation: 'Chimney sweep'
+    },
+    {
+        name: 'Jane Doe',
+        age: 32,
+        role: 'Administrator'
+    },
+    {
+        name: 'Kate Müller',
+        age: 23,
+        occupation: 'Astronaut'
+    },
+    {
+        name: 'Bruce Willis',
+        age: 64,
+        role: 'World saver'
+    }
+];
+
+export function logPerson(user: Person) {
+    console.log(` - ${user.name}, ${user.age}`);
+}
+
+persons.forEach(logPerson);
+```
+
+## Thursday
+
+1.`What's Your Posion?`
+```Javascript
+function find(rats) {
+    return rats.reduce((prev, curr) => {
+        return prev + Math.pow(2, curr);
+    }, 0);
+}
+```
+
+2.`Array.diff`
+```Javascript
+function array_diff(a, b) {
+    return a.filter((value) => !b.includes(value));
 }
 ```
