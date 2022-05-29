@@ -586,3 +586,43 @@ var encryptThis = function(text) {
   return result.join(' ');
 }
 ```
+
+# Week 3 challenges
+
+## Wedndesday
+
+1.`Simple Validation Of A Username`
+```Javascript
+function validateUsr(username) {
+    const res = /^[a-z0-9_]{4,16}$/.test(username);
+    return res;
+}
+```
+
+2.`Get Number From String`
+```Javascript
+function getNumberFromString(s) {
+    return Number(s.replace(/\D/g, ''));
+}
+```
+
+## Thursday
+
+1.`String Cleaning`
+```Javascript
+function stringClean(s) {
+    return s.replace(/[0-9]/g, '');
+}
+```
+
+2.`Password Validation`
+```Javascript
+function validate(password) {
+    return (
+        /^[A-Za-z0-9]{6,}$/.test(password) &&
+        /[A-Z]+/.test(password) &&
+        /[a-z]+/.test(password) &&
+        /[0-9]+/.test(password)
+    );
+}
+```
