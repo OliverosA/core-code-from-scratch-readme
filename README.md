@@ -858,3 +858,81 @@ export function validBraces(braces: string): boolean {
   return result.length === 0;
 }
 ```
+
+4.`Tic-Tac-Toe`
+```Typescript
+function solveTTT(b) {
+    var xwin = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ];
+    for (var i in xwin)
+        if (xwin[i].map((x) => b[x]).join('') == 'XX')
+            return xwin[i].reduce((x, y) => (b[y] == '' ? x + y : x), 0);
+    for (var i in b) if (b[i] == '') return +i;
+}
+```
+
+5.`Tic-Tac-Toe table Generator`
+```Typescript
+function displayBoard(board, width) {
+    let result = "";
+    for (let i = 0; i < board.length; i++) {
+        if (i > 0 && i % width === 0) {
+            result += "---".repeat(width) + "-".repeat(width - 1) + "\n";
+        }
+
+        result += " " + board[i] + " ";
+
+        if (i + 1 < board.length) {
+            if ((i + 1) % width === 0) result += "\n";
+            else result += "|";
+        }
+    }
+    return result;
+}
+```
+
+## Wednesday
+
+1.`Duplicate Encoder`
+```Typescript
+const appereances = (word: string[], charToCount: string) => {
+    return word.filter((char: string) => char === charToCount).length;
+};
+
+export function duplicateEncode(word: string) {
+    let result = '',
+        encodeChar = '';
+    const characters = [...word.toLowerCase()];
+    characters.forEach((char) => {
+        encodeChar = ')';
+        if (appereances(characters, char) === 1) {
+            encodeChar = '(';
+        }
+        result += encodeChar;
+    });
+    return result;
+}
+```
+
+2.`Find The Odd Int`
+```Typescript
+const appereances = (numbers: number[], nToCount: number) => {
+    return numbers.filter((n: number) => n === nToCount).length;
+};
+
+export const findOdd = (xs: number[]): number => {
+    const nonRepeatNumbers = new Set(xs);
+    for (let n of nonRepeatNumbers) {
+        if (appereances(xs, n) % 2 !== 0) return n;
+    }
+    return -1;
+};
+```
