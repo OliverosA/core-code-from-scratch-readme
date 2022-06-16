@@ -1,0 +1,42 @@
+# 1. Node.JS Core Understanding
+
+### 1. What is Node.JS?
+Node.JS is a cross-platform, open source JavaScript runtime environment that allows you to keep latency low and 
+performance high by taking a "non-blocking" approach to serving requests. Node.JS uses a non-blocking, 
+event-driven I/O model, making it more lightweight and efficient.
+
+### 2. What problem does Node.JS solve?
+Solved the I/O problem 
+
+### 3. What is the V8 Javascript Engine?
+Chrome V8 is a JavaScript engine that enables JavaScript to be compiled, allowing JavaScript code to be 
+executed inside or outside of a browser. Translate the JavaScript code to "machine code".
+
+### 4. Is Node.JS really necessary in the Development ecosystem?
+It is not necessary but it is useful, since it allows the development of applications in a better way, 
+allowing JavaScript to be used both in the back-end and in the front-end. In addition to allowing the development 
+of applications that run in real time and must process many requests from clients.
+
+### 5. What is the difference between Node.JS and any other browser?
+Node executes JavaScript on the server side, while browsers do it on the client side.
+
+### 6. What is NVM and Why is it useful for Node.JS developers?
+NVM is a Node Version Manager and is useful because allows to manage multiple versions of Node in a same system
+
+
+# 2. Node.JS Module System
+
+### 1. What is a Javascript Module?
+Is a file that contains functions to realize some task, we create modules to make a 
+big application into a multiple files of specific tasks
+
+### 2. Why are Javascript Modules necessary?
+It is necessary because it makes it easy to create files that perform specific tasks 
+to be able to perform a much larger task by using them together.
+
+### 3. What module standards are available in Node.JS?
+
+
+### 4. What are the differences between ESModules and CommonJS modules?
+
+### 5. Which types of modules exist in Node.JS?
