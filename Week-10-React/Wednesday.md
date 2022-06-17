@@ -35,8 +35,16 @@ It is necessary because it makes it easy to create files that perform specific t
 to be able to perform a much larger task by using them together.
 
 ### 3. What module standards are available in Node.JS?
-
+The standard modules are ESModules and CommonJS
 
 ### 4. What are the differences between ESModules and CommonJS modules?
+* CommonJS only allows synchronous loading of modules, while ESM allows both synchronous and asynchronous loading.
+* CommonJS requires are not supported directly in the browser, while ESM imports are if the <script type="module"> attribute is indicated in the scripts that use them.
+* CommonJS doesn't allow you to load a module directly from a URL or CDN, while with ESM you can do it seamlessly and it works directly from a browser.
 
 ### 5. Which types of modules exist in Node.JS?
+Node.js includes three types of modules:
+
+* Core Modules
+* Local Modules
+* Third Party Modules
