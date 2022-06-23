@@ -51,3 +51,30 @@ Node.js includes three types of modules:
   
 # 3. Node.JS Module System - Practice
 * Project Link: https://github.com/OliverosA/Node.JS-Module-System
+  
+# 4. Client-Server Model - Learning Exercise
+  
+### 1. What is a Server?
+It is a program or device that allows to provide a service to another program (client). The server is responsible for providing the data to the client  
+  
+### 2. Why is a Client?
+Because it receives information from someone else (server) and uses this information in the way it needs
+
+### 3. Is a server just another physical computer?
+No, it can be a device made up of many components (machine) or it can also be an application that runs inside a local machine.
+  
+  * Why do we refer to a certain class of applications as Servers?
+  Because they allow to provide information to other applications
+  
+  * What is the difference?
+  A physical server can be a machine that receives requests from many different applications (clients) locally or on the network (internet). While   a software-based server is a program that offers a special service that can be used locally or across a network by other programs called           clients.
+  
+### 4. Is there any similarity between human communication and the client-server model?
+
+  
+### 5. Is the client-server model applicable only to the Web?
+
+  
+  * Can you mention any other example of this model outside the Web?
+  
+  
