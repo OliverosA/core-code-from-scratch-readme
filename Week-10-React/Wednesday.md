@@ -70,11 +70,12 @@ No, it can be a device made up of many components (machine) or it can also be an
   A physical server can be a machine that receives requests from many different applications (clients) locally or on the network (internet). While   a software-based server is a program that offers a special service that can be used locally or across a network by other programs called           clients.
   
 ### 4. Is there any similarity between human communication and the client-server model?
-
+Yes, because in human communication both sides (speaker and listener) must communicate under the same language or under the same communication rules in order to understand and interact with each other.
   
 ### 5. Is the client-server model applicable only to the Web?
-
+No, because this model can also be used locally on a single machine or through an internal network between machines.
   
   * Can you mention any other example of this model outside the Web?
+  A print server is a server that connects a printer within a network, so that any computer can access this printer and print any document.
   
   
