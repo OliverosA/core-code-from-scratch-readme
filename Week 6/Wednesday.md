@@ -33,3 +33,37 @@ export const findOdd = (xs: number[]): number => {
     return -1;
 };
 ```
+3. `Which Are In?`
+```Typescript
+export function inArray(a1: string[], a2: string[]): string[] {
+  return a1
+  .filter((a: string) => a2.some((b: string ) => b.includes(a)))
+  .sort();
+}
+```
+
+4. `Sums Of Parts`
+```Typescript
+export function partsSums(ls: number[]): number[] {
+  const result: number[] = [];
+  const total = ls.reduce((prev: number, curr: number) => prev + curr, 0);
+  result.push(total);
+  for (let i = 0; i < ls.length; i++) {
+    result.push(result[i] - ls[i]);
+  }
+  return result;
+}
+```
+
+5. `Consecutive Strings`
+```Typescript
+export function longestConsec(strarr: string[], k: number): string {
+  let max = '';
+  const n = strarr.length;
+  for (let i = 0; i <= n - k && k > 0 && k <= n; i++) {
+    const newStr = strarr.slice(i, i + k).join('');
+    max = max.length >= newStr.length ? max : newStr;
+  }
+  return max;
+}
+```
